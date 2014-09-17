@@ -1,4 +1,4 @@
-package xu.li.cordova.weixin;
+package com.qq.cordova.wechat;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -13,16 +13,16 @@ import org.json.JSONObject;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 
+import com.tencent.mm.sdk.modelmsg.SendMessageToWX;
+import com.tencent.mm.sdk.modelmsg.WXMediaMessage;
+import com.tencent.mm.sdk.modelmsg.WXTextObject;
+import com.tencent.mm.sdk.modelmsg.WXWebpageObject;
 import com.tencent.mm.sdk.openapi.IWXAPI;
-import com.tencent.mm.sdk.openapi.SendMessageToWX;
 import com.tencent.mm.sdk.openapi.WXAPIFactory;
-import com.tencent.mm.sdk.openapi.WXMediaMessage;
-import com.tencent.mm.sdk.openapi.WXTextObject;
-import com.tencent.mm.sdk.openapi.WXWebpageObject;
 
-public class Weixin extends CordovaPlugin {
+public class Wechat extends CordovaPlugin {
 
-	public static final String WXAPPID_PROPERTY_KEY = "weixinappid";
+	public static final String WXAPPID_PROPERTY_KEY = "wechatappid";
 
 	public static final String ERROR_WX_NOT_INSTALLED = "未安装微信";
 	public static final String ERROR_ARGUMENTS = "参数错误";
@@ -47,8 +47,8 @@ public class Weixin extends CordovaPlugin {
 	public static final int TYPE_WX_SHARING_TEXT = 8;
 	
 
-	protected IWXAPI wxAPI;
-	protected CallbackContext currentCallbackContext;
+	private IWXAPI wxAPI;
+	public static CallbackContext currentCallbackContext;
 
 	@Override
 	public boolean execute(String action, JSONArray args,
@@ -64,7 +64,7 @@ public class Weixin extends CordovaPlugin {
 
 	protected IWXAPI getWXAPI() {
 		if (wxAPI == null) {
-			String appId = webView.getProperty(WXAPPID_PROPERTY_KEY, "");
+			String appId = WXAPPID_PROPERTY_KEY;
 			wxAPI = WXAPIFactory.createWXAPI(webView.getContext(), appId, true);
 		}
 
@@ -75,7 +75,7 @@ public class Weixin extends CordovaPlugin {
 			throws JSONException {
 		final IWXAPI api = getWXAPI();
 
-		api.registerApp(webView.getProperty(WXAPPID_PROPERTY_KEY, ""));
+		api.registerApp(WXAPPID_PROPERTY_KEY);
 
 		// check if installed
 		if (!api.isWXAppInstalled()) {
@@ -186,4 +186,3 @@ public class Weixin extends CordovaPlugin {
 		return wxMediaMessage;
 	}
 }
-
