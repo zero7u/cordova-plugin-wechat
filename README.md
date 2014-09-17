@@ -16,14 +16,23 @@ See [cordova-plugin-wechat-example](https://github.com/xu-li/cordova-plugin-wech
 Install(iOS)
 ===============
 
-1. Add [wechat lib](http://open.weixin.qq.com/document/gettingstart/ios/) to your project. Don't forget to add the "URL Type".
+1. Add [wechat lib](https://open.weixin.qq.com/zh_CN/htmledition/res/dev/download/sdk/iOS_SDK-64.zip) to your project. 
 
-2. ```cordova plugin add https://github.com/xu-li/cordova-plugin-wechat```, or using [plugman](https://npmjs.org/package/plugman), [phonegap](https://npmjs.org/package/phonegap)
+2. ```cordova plugin add https://github.com/zero7u/cordova-plugin-wechat```, or using [plugman](https://npmjs.org/package/plugman), [phonegap](https://npmjs.org/package/phonegap)
 
 3. ```cordova build ios``` (it will fail if you haven't include the wechat lib yet.)
 
 4. Open ```config.xml``` in xcode at the root.
 
+5. Add ```<preference name="wechatappid" value="YOUR_WECHAT_APP_ID" />```
+
+Install(android)
+===============
+
+1. Add [wechat li](https://open.weixin.qq.com/zh_CN/htmledition/res/dev/download/sdk/Android_SDK.zip) to your project.
+2. ```cordova plugin add https://github.com/zero7u/cordova-plugin-wechat```, or using [plugman](https://npmjs.org/package/plugman), [phonegap](https://npmjs.org/package/phonegap)
+3. ```cordova build android``` (it will fail if you haven't include the wechat lib yet.)
+4. Open ```config.xml``` in xcode at the root.
 5. Add ```<preference name="wechatappid" value="YOUR_WECHAT_APP_ID" />```
 
 Usage
@@ -38,14 +47,14 @@ Wechat.share({
        thumb: "http://YOUR_THUMBNAIL_IMAGE",
        media: {
            type: Wechat.Type.WEBPAGE,   // webpage
-           webpageUrl: "https://github.com/xu-li/cordova-plugin-wechat"    // webpage
+           webpageUrl: "https://github.com/zero7u/cordova-plugin-wechat"    // webpage
        }
    },
    scene: Wechat.Scene.TIMELINE   // share to Timeline
-}, function () {
+}, function (message) {
     alert("Success");
-}, function (reason) {
-    alert("Failed: " + reason);
+}, function (message) {
+    alert("Failed: " + message);
 });
 ```
 
@@ -61,11 +70,9 @@ A: Please make sure "wechatappid" is added in ```config.xml```
 TODO
 ===============
 
-1. ~~Add android version~~
+1. Share to wechat session(聊天) and wechat favorite(收藏)
 
-2. ~~Share to wechat session(聊天) and wechat favorite(收藏)~~
-
-3. Add other media types, including music etc.
+2. Add other media types, including music etc.
 
 LICENSE
 ===============
