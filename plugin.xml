@@ -3,14 +3,14 @@
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
     xmlns:rim="http://www.blackberry.com/ns/widgets"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    id="xu.li.cordova.wechat"
+    id="com.qq.cordova.wechat"
     version="0.4">
     <name>Wechat</name>
     <description>A cordova plugin, a JS version of Wechat SDK</description>
     <license>MIT</license>
     <keywords>cordova,wechat,weixin,share</keywords>
-    <repo>https://github.com/xu-li/cordova-plugin-wechat.git</repo>
-    <issue>https://github.com/xu-li/cordova-plugin-wechat/issues</issue>
+    <repo>https://github.com/zero7u/cordova-plugin-wechat.git</repo>
+    <issue>https://github.com/zero7u/cordova-plugin-wechat/issues</issue>
 
     <!-- add this to your config.xml -->
     <!-- <preference name="WechatAppId" value="YOUR_WECHAT_APP_ID_HERE" /> -->
@@ -34,12 +34,12 @@
 
     <!-- android -->
     <platform name="android">
-        <config-file target="res/xml/config.xml" parent="/*">
+        <config-file target="config.xml" parent="/*">
             <feature name="Wechat">
-                <param name="android-package" value="xu.li.cordova.wechat.Wechat"/>
+                <param name="android-package" value="com.qq.cordova.wechat.Wechat"/>
             </feature>
         </config-file>
 
-        <source-file src="src/android/Wechat.java" target-dir="src/xu/li/cordova/wechat" />
+        <source-file src="src/android/Wechat.java" target-dir="src/com/qq/cordova/wechat" />
     </platform>
 </plugin>
