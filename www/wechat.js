@@ -17,30 +17,6 @@ module.exports = {
         WEBPAGE: 7
     },
 
-    /**
-     * Share a message to wechat app
-     *
-     * @example
-     * <code>
-     * Wechat.share({
-     *     message: {
-     *        title: "Message Title",
-     *        description: "Message Description(optional)",
-     *        mediaTagName: "Media Tag Name(optional)",
-     *        thumb: "http://YOUR_THUMBNAIL_IMAGE",
-     *        media: {
-     *            type: Wechat.Type.WEBPAGE,   // webpage
-     *            webpageUrl: "https://github.com/xu-li/cordova-plugin-wechat"    // webpage
-     *        }
-     *    },
-     *    scene: Wechat.Scene.TIMELINE   // share to Timeline
-     * }, function () {
-     *     alert("Success");
-     * }, function (reason) {
-     *     alert("Failed: " + reason);
-     * });
-     * </code>
-     */
     share: function (message, onSuccess, onError) {
         exec(onSuccess, onError, "Wechat", "share", [message]);
     }
