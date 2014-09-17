@@ -29,7 +29,7 @@ Install(iOS)
 Install(android)
 ===============
 
-1. Add [wechat li](https://open.weixin.qq.com/zh_CN/htmledition/res/dev/download/sdk/Android_SDK.zip) to your project.
+1. Add [wechat lib](https://open.weixin.qq.com/zh_CN/htmledition/res/dev/download/sdk/Android_SDK.zip) to your project.
 
 2. ```cordova plugin add https://github.com/zero7u/cordova-plugin-wechat```, or using [plugman](https://npmjs.org/package/plugman), [phonegap](https://npmjs.org/package/phonegap)
 
