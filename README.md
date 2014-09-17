@@ -30,10 +30,16 @@ Install(android)
 ===============
 
 1. Add [wechat li](https://open.weixin.qq.com/zh_CN/htmledition/res/dev/download/sdk/Android_SDK.zip) to your project.
+
 2. ```cordova plugin add https://github.com/zero7u/cordova-plugin-wechat```, or using [plugman](https://npmjs.org/package/plugman), [phonegap](https://npmjs.org/package/phonegap)
+
 3. ```cordova build android``` (it will fail if you haven't include the wechat lib yet.)
-4. Open ```config.xml``` in xcode at the root.
-5. Add ```<preference name="wechatappid" value="YOUR_WECHAT_APP_ID" />```
+
+4. Add ```<preference name="wechatappid" value="YOUR_WECHAT_APP_ID" />``` to ```config.xml```
+
+5. Add ```<activity android:name=".wxapi.WXEntryActivity" android:label="@string/app_name" android:exported="true" android:theme="@android:style/Theme.Translucent" />``` to your Manirfest file. 
+
+6. Create package ```wxapi``` under your package, and copy ```WXEntryActivity.java``` into it, then correct the package name of your own.
 
 Usage
 ===============
