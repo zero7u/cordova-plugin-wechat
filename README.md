@@ -39,7 +39,7 @@ Install(android)
 
 5. Add ```<activity android:name=".wxapi.WXEntryActivity" android:label="@string/app_name" android:exported="true" android:theme="@android:style/Theme.Translucent" />``` to your Manirfest file. 
 
-6. Create package ```wxapi``` under your package, and copy ```WXEntryActivity.java``` into it, then correct the package name of your own.
+6. Create package ```wxapi``` under your package, and copy ```WXEntryActivity.java``` into it, then correct the package name to your own.
 
 Usage
 ===============
